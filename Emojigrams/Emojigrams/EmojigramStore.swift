@@ -67,6 +67,6 @@ class EmojigramStore: NSObject {
         self.add(emojigram: Emojigram(emoji: "🦂🤜🤛❄️❄️❄️", hint: "Either kontinue guessing or suffer a fatality", category: "Video Games", answer: "Mortal Kombat"))
         self.add(emojigram: Emojigram(emoji: "🇺🇸💧🇨🇦\n\u{3000}💧\n\u{3000}💧\n\u{3000}💧\n\u{3000}💧\n\u{3000}💧\n\u{3000}💧", hint: "Angel may be taller, but can't beat the location", category: "Place", answer: "Niagara Falls"))
         self.add(emojigram: Emojigram(emoji: "💋💋💥💥", hint: "I think it takes place at Christmas? Shane Black's stuff usually does", category: "Movies", answer: "Kiss Kiss Bang Bang"))
-        self.add(emojigram: Emojigram(emoji: "👽📞🏠", hint: "A bag of Reese's Pieces if you can get it", category: "Movies", answer: "E.T. the Extra-Terrestial"))
+        self.add(emojigram: Emojigram(emoji: "👽📞🏠", hint: "A bag of Reese's Pieces if you can get it", category: "Movies", answer: "E.T."))
     }
 }
