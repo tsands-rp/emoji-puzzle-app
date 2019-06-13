@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YZY-SY-5z6">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Emojigram Guesser View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="EmojigramGuesserViewController" customModule="Emojigrams" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the Emojigram!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueL-w9-wjB">
+                                <rect key="frame" x="20" y="108" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category is..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-4t-mnH">
+                                <rect key="frame" x="156.5" y="154.5" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scn-Nc-XgL">
+                                <rect key="frame" x="20" y="193.5" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBY-gw-jRx">
+                                <rect key="frame" x="171.5" y="257.5" width="71" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nRT-q3-0cj">
+                                <rect key="frame" x="20" y="333.5" width="320" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2i-0Z-iLG">
+                                <rect key="frame" x="348" y="333.5" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="C8i-a5-1uW"/>
+                                </constraints>
+                                <state key="normal" title="Got it?"/>
+                                <connections>
+                                    <action selector="pressedGuessButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gqA-eC-wd9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0V-oF-eOx">
+                                <rect key="frame" x="166.5" y="413.5" width="81" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Need a hint?"/>
+                                <connections>
+                                    <action selector="tappedHintButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hn5-oY-mrB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeN-SB-8yY">
+                                <rect key="frame" x="20" y="462.5" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hBY-gw-jRx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2Rh-bC-oi2"/>
+                            <constraint firstItem="q0V-oF-eOx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Am-gw-4lf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ueL-w9-wjB" secondAttribute="trailing" constant="20" id="4mX-ve-6EA"/>
+                            <constraint firstItem="eeN-SB-8yY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7R1-FT-Gaw"/>
+                            <constraint firstItem="Scn-Nc-XgL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8ZA-gr-mqR"/>
+                            <constraint firstItem="Scn-Nc-XgL" firstAttribute="top" secondItem="rq8-4t-mnH" secondAttribute="bottom" constant="18" id="B0Z-G3-SVW"/>
+                            <constraint firstItem="eeN-SB-8yY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D01-gN-eMV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hBY-gw-jRx" secondAttribute="trailing" constant="20" id="FeC-So-iQT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Scn-Nc-XgL" secondAttribute="trailing" constant="20" id="HYd-3l-cHq"/>
+                            <constraint firstItem="q0V-oF-eOx" firstAttribute="top" secondItem="nRT-q3-0cj" secondAttribute="bottom" constant="50" id="JLu-AY-ZL4"/>
+                            <constraint firstItem="hBY-gw-jRx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LpL-GK-wNQ"/>
+                            <constraint firstItem="Scn-Nc-XgL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="O3T-Rk-k2I"/>
+                            <constraint firstItem="eeN-SB-8yY" firstAttribute="top" secondItem="q0V-oF-eOx" secondAttribute="bottom" constant="20" id="Q6L-gd-IHP"/>
+                            <constraint firstItem="hBY-gw-jRx" firstAttribute="top" secondItem="Scn-Nc-XgL" secondAttribute="bottom" constant="40" id="R3e-up-fvd"/>
+                            <constraint firstItem="ueL-w9-wjB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="deD-bx-zph"/>
+                            <constraint firstItem="rq8-4t-mnH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gSD-6j-Vb2"/>
+                            <constraint firstItem="u2i-0Z-iLG" firstAttribute="leading" secondItem="nRT-q3-0cj" secondAttribute="trailing" constant="8" id="jjg-UU-t0B"/>
+                            <constraint firstItem="rq8-4t-mnH" firstAttribute="top" secondItem="ueL-w9-wjB" secondAttribute="bottom" constant="20" id="k1l-xi-CqZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u2i-0Z-iLG" secondAttribute="trailing" constant="20" id="kuH-uk-Nt9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eeN-SB-8yY" secondAttribute="trailing" constant="20" id="mME-3S-lnv"/>
+                            <constraint firstItem="nRT-q3-0cj" firstAttribute="top" secondItem="hBY-gw-jRx" secondAttribute="bottom" constant="40" id="nsh-p8-EWW"/>
+                            <constraint firstItem="ueL-w9-wjB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p1u-D5-7ah"/>
+                            <constraint firstItem="u2i-0Z-iLG" firstAttribute="centerY" secondItem="nRT-q3-0cj" secondAttribute="centerY" id="ysV-Av-72j"/>
+                            <constraint firstItem="ueL-w9-wjB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zdN-5H-15u"/>
+                            <constraint firstItem="nRT-q3-0cj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zvS-Tf-FTC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cfe-gr-PZy"/>
+                    <connections>
+                        <outlet property="categoryHeaderLabel" destination="rq8-4t-mnH" id="5Va-8R-bTF"/>
+                        <outlet property="categoryLabel" destination="Scn-Nc-XgL" id="s3s-LG-fSt"/>
+                        <outlet property="emojigramLabel" destination="hBY-gw-jRx" id="C69-eI-0Es"/>
+                        <outlet property="guessButton" destination="u2i-0Z-iLG" id="qAY-rU-vhm"/>
+                        <outlet property="guessTextField" destination="nRT-q3-0cj" id="Wfo-B9-lYW"/>
+                        <outlet property="hintButton" destination="q0V-oF-eOx" id="ncM-tS-Ufa"/>
+                        <outlet property="hintLabel" destination="eeN-SB-8yY" id="HBz-79-sH8"/>
+                        <outlet property="titleLabel" destination="ueL-w9-wjB" id="O90-hx-wdV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065.217391304348" y="20.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nRo-cI-eVN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YZY-SY-5z6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BmB-6L-qU1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="v8T-jm-qRH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Igw-js-Uzn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="155.07246376811597" y="20.758928571428569"/>
+        </scene>
+    </scenes>
+</document>
