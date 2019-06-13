@@ -51,6 +51,8 @@ class EmojigramGuesserViewController: UIViewController {
         self.categoryLabel.text = emojigram.category
         self.emojigramLabel.text = emojigram.emoji
         self.guessTextField.placeholder = "What's your guess?"
+        self.hintLabel.text = nil
+        self.hintButton.setTitle("Need a hint?", for: .normal)
     }
 
     @IBAction func pressedGuessButton(_ sender: Any) {
@@ -106,6 +108,7 @@ class EmojigramGuesserViewController: UIViewController {
             return
         }
         self.hintLabel.text = hint
+        self.hintButton.setTitle("Need yet more help?", for: .normal)
     }
     
     func failedGuessHappened() {
