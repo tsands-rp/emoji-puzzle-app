@@ -10,17 +10,23 @@ import Foundation
 
 class EmojigramStore: NSObject {
     fileprivate var emojigrams:[Emojigram] = []
+    var currentEmojigram: Emojigram?
     
     override init() {
         super.init()
         // Spoilers/Answers at the very end of this file in the addDefaultEmojigrams function.
         // DO NOT READ unless you want to cheat.
         self.addDefaultEmojigrams()
-        
     }
     
-    func randomEmojigram() -> Emojigram {
-        return emojigrams.remove(at: Int.random(in: 0..<self.emojigrams.count))
+    func randomEmojigram() -> Emojigram? {
+        let emojigramCount = self.emojigrams.count
+        guard emojigramCount > 0 else {
+            self.currentEmojigram = nil
+            return self.currentEmojigram
+        }
+        self.currentEmojigram = emojigrams.remove(at: Int.random(in: 0..<emojigramCount))
+        return self.currentEmojigram
     }
     
     func add(emojigram: Emojigram) {
