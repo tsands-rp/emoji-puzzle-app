@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Emojigrams.xcodeproj">
+      location = "group:/Users/tsands/dev/ios/emoji-puzzle-app/Emojigrams/Emojigrams/EmojigramGuessProgramaticLayoutViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

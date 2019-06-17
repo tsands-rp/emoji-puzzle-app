@@ -12,4 +12,8 @@ class EmojigramTitleScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    @IBAction func tappedProgrammaticViewButton(_ sender: Any) {
+        let vc = EmojigramGuessProgramaticLayoutViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
