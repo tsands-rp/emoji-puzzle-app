@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmojigramGuessProgramaticLayoutViewController: UIViewController {
+class EmojigramGuessProgramaticLayoutViewController: EmojigramGuesserBaseViewController {
     lazy var titleLabel: UILabel! = {
         let label = UILabel()
         label.text = "Guess the Emojigram"
@@ -60,6 +60,7 @@ class EmojigramGuessProgramaticLayoutViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(self.pressedGuessButton), for: .touchUpInside)
         return button
     }()
     
@@ -67,7 +68,9 @@ class EmojigramGuessProgramaticLayoutViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Need a hint?", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(self.pressedHintButton), for: .touchUpInside)
         return button
     }()
     
@@ -84,7 +87,9 @@ class EmojigramGuessProgramaticLayoutViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Give up?", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(self.pressedGiveUpButton), for: .touchUpInside)
         return button
     }()
     
@@ -98,6 +103,15 @@ class EmojigramGuessProgramaticLayoutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addSubviewsToView()
+        self.view.backgroundColor = .white
+        self.setupProgramaticAutolayout()
+        self.updatePage()
+    }
+    
+    // MARK: View Updates
+    
+    func addSubviewsToView() {
         self.view.addSubview(self.titleLabel)
         self.view.addSubview(self.categoryHeaderLabel)
         self.view.addSubview(self.categoryLabel)
@@ -107,12 +121,7 @@ class EmojigramGuessProgramaticLayoutViewController: UIViewController {
         self.view.addSubview(self.hintButton)
         self.view.addSubview(self.hintLabel)
         self.view.addSubview(self.giveUpButton)
-        self.view.backgroundColor = .white
-        self.setupProgramaticAutolayout()
-        self.updatePage()
     }
-    
-    // MARK: View Updates
     
     func updatePage() {
         guard let emojigram = emojigramsList.randomEmojigram() else {
@@ -169,13 +178,52 @@ class EmojigramGuessProgramaticLayoutViewController: UIViewController {
         self.giveUpButton.topAnchor.constraint(equalTo: self.hintLabel.bottomAnchor, constant: 20).isActive = true
     }
     
-    // MARK: Alert Presentation Methods
     
-    func presentNoMoreEmojigramsAlert() {
-        let alertController = UIAlertController(title: "No more emojigrams!", message: "Sorry, but there's no more emojigrams left for you to conquer. Weep at your human limits.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
+    // MARK: Button Actions
+    
+    @objc func pressedGuessButton() {
+        guard let emojigram = self.emojigramsList.currentEmojigram, let guess = self.guessTextField.text else {
+            self.presentGuessWithoutEmojigramOrTextAlert()
+            return
+        }
+        let isSuccessfulGuess = emojigram.answer.lowercased() == guess.lowercased()
+        isSuccessfulGuess ? self.presentSuccessfulGuessAlert(withNewEmojigramAction: self.updatePage, andQuitAction: self.quit): self.presentFailedGuessAlert()
     }
-
+    
+    @objc func pressedHintButton() {
+        if hasHintBeenShown() {
+            self.presentExtraHintAlert(withExtraHintAction: self.fillOutFirstThirdAnswer)
+            return
+        }
+        
+        guard let hint = self.emojigramsList.currentEmojigram?.hint else {
+            self.presentNoHintAvailableAlert(withNoHintAction: self.showGiveUpButton)
+            return
+        }
+        
+        self.hintLabel.text = hint
+        self.hintButton.setTitle("Need yet more help?", for: .normal)
+    }
+    
+    @objc func pressedGiveUpButton() {
+        self.updatePage()
+    }
+    
+    // MARK: Helper Functions
+    
+    func hasHintBeenShown() -> Bool {
+        guard let text = self.hintLabel.text else { return false }
+        return text.count > 0
+    }
+    
+    func fillOutFirstThirdAnswer() {
+        guard let answer = self.emojigramsList.currentEmojigram?.answer else { return }
+        let firstThirdAnswer = String(answer.prefix(answer.count/3))
+        self.guessTextField.text = firstThirdAnswer
+        self.showGiveUpButton()
+    }
+    
+    func showGiveUpButton() {
+        self.giveUpButton.isHidden = false
+    }
 }
