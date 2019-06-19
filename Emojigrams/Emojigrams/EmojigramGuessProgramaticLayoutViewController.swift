@@ -93,7 +93,16 @@ class EmojigramGuessProgramaticLayoutViewController: EmojigramGuesserBaseViewCon
         return button
     }()
     
-    let emojigramsList:EmojigramStore = EmojigramStore()
+    let emojigramsList:EmojigramStore
+    
+    init(store: EmojigramStore) {
+        self.emojigramsList = store
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         self.view = UIView()

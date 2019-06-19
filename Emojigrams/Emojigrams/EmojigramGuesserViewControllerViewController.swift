@@ -19,7 +19,7 @@ class EmojigramGuesserViewController: EmojigramGuesserBaseViewController {
     @IBOutlet weak var hintLabel: UILabel!
     @IBOutlet weak var giveUpButton: UIButton!
     
-    let emojigramsList:EmojigramStore = EmojigramStore()
+    var emojigramsList:EmojigramStore?
     
     //MARK: View Lifecycle
     
@@ -31,7 +31,7 @@ class EmojigramGuesserViewController: EmojigramGuesserBaseViewController {
     // MARK: View Updates
     
     func updatePage() {
-        guard let emojigram = emojigramsList.randomEmojigram() else {
+        guard let emojigram = emojigramsList?.randomEmojigram() else {
             self.updatePageWithoutEmojigram()
             return
         }
@@ -60,7 +60,7 @@ class EmojigramGuesserViewController: EmojigramGuesserBaseViewController {
     // MARK: IB Actions
 
     @IBAction func pressedGuessButton(_ sender: Any) {
-        guard let emojigram = self.emojigramsList.currentEmojigram, let guess = self.guessTextField.text else {
+        guard let emojigram = self.emojigramsList?.currentEmojigram, let guess = self.guessTextField.text else {
             self.presentGuessWithoutEmojigramOrTextAlert()
             return
         }
@@ -74,7 +74,7 @@ class EmojigramGuesserViewController: EmojigramGuesserBaseViewController {
             return
         }
         
-        guard let hint = self.emojigramsList.currentEmojigram?.hint else {
+        guard let hint = self.emojigramsList?.currentEmojigram?.hint else {
             self.presentNoHintAvailableAlert(withNoHintAction: self.showGiveUpButton)
             return
         }
@@ -95,7 +95,7 @@ class EmojigramGuesserViewController: EmojigramGuesserBaseViewController {
     }
     
     func fillOutFirstThirdAnswer() {
-        guard let answer = self.emojigramsList.currentEmojigram?.answer else { return }
+        guard let answer = self.emojigramsList?.currentEmojigram?.answer else { return }
         let firstThirdAnswer = String(answer.prefix(answer.count/3))
         self.guessTextField.text = firstThirdAnswer
         self.showGiveUpButton()

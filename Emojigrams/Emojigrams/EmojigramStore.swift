@@ -16,7 +16,7 @@ class EmojigramStore: NSObject {
         super.init()
         // Spoilers/Answers at the very end of this file in the addDefaultEmojigrams function.
         // DO NOT READ unless you want to cheat.
-        self.addDefaultEmojigrams()
+//        self.addDefaultEmojigrams()
     }
     
     func randomEmojigram() -> Emojigram? {

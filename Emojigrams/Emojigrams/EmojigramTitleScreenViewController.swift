@@ -9,11 +9,25 @@
 import UIKit
 
 class EmojigramTitleScreenViewController: UIViewController {
+    let emojigramStore = EmojigramStore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func tappedProgrammaticViewButton(_ sender: Any) {
-        let vc = EmojigramGuessProgramaticLayoutViewController()
+        let vc = EmojigramGuessProgramaticLayoutViewController(store: self.emojigramStore)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func tappedBuildYourOwnViewButton(_ sender: Any) {
+        let vc = BuildYourOwnEmojigramViewController(store: self.emojigramStore)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc: EmojigramGuesserViewController = segue.destination as? EmojigramGuesserViewController else { return }
+        vc.emojigramsList = self.emojigramStore
     }
 }
