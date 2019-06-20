@@ -16,6 +16,7 @@ class EmojigramTitleScreenViewController: UIViewController {
     }
     
     @IBAction func tappedProgrammaticViewButton(_ sender: Any) {
+        self.emojigramStore.startNewGame()
         let vc = EmojigramGuessProgramaticLayoutViewController(store: self.emojigramStore)
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -27,6 +28,7 @@ class EmojigramTitleScreenViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.emojigramStore.startNewGame()
         guard let vc: EmojigramGuesserViewController = segue.destination as? EmojigramGuesserViewController else { return }
         vc.emojigramsList = self.emojigramStore
     }
