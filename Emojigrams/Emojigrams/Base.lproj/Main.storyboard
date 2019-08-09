@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YZY-SY-5z6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1PY-dR-sQW">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,87 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Emojigram Title Screen View Controller-->
+        <scene sceneID="ikV-lV-fjn">
+            <objects>
+                <viewController id="Bo4-8v-6r9" customClass="EmojigramTitleScreenViewController" customModule="Emojigrams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oK7-Pl-WhV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GUESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcC-t9-LOT">
+                                <rect key="frame" x="153.5" y="128" width="107" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjF-Pf-pVx">
+                                <rect key="frame" x="175.5" y="187" width="63" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMOJIGRAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWT-xp-qop">
+                                <rect key="frame" x="110" y="246" width="194" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYU-kT-WFC">
+                                <rect key="frame" x="62.5" y="485" width="289" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <state key="normal" title="Want to play a game?">
+                                    <color key="titleColor" red="0.21965261576569473" green="0.14177467059116322" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Zl7-QV-egi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JD-9I-99P">
+                                <rect key="frame" x="20" y="553" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="On a programmatically-created VC?">
+                                    <color key="titleColor" red="0.21965261580000001" green="0.14177467060000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedProgrammaticViewButton:" destination="Bo4-8v-6r9" eventType="touchUpInside" id="u1O-ov-7tl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRf-Mp-Zl2">
+                                <rect key="frame" x="136.5" y="609" width="141" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Build your own!">
+                                    <color key="titleColor" red="0.21965261580000001" green="0.14177467060000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedBuildYourOwnViewButton:" destination="Bo4-8v-6r9" eventType="touchUpInside" id="TuY-KK-bfO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9872223104010126" green="1" blue="0.37650403148169054" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Jyo-3i-5M1" firstAttribute="trailing" secondItem="9JD-9I-99P" secondAttribute="trailing" constant="20" id="0Th-cK-IZV"/>
+                            <constraint firstItem="zcC-t9-LOT" firstAttribute="top" secondItem="Jyo-3i-5M1" secondAttribute="top" constant="40" id="3yK-zT-TQr"/>
+                            <constraint firstItem="HRf-Mp-Zl2" firstAttribute="top" secondItem="9JD-9I-99P" secondAttribute="bottom" constant="20" id="60J-ci-WLb"/>
+                            <constraint firstItem="jjF-Pf-pVx" firstAttribute="centerX" secondItem="oK7-Pl-WhV" secondAttribute="centerX" id="N0L-ox-gXB"/>
+                            <constraint firstItem="jjF-Pf-pVx" firstAttribute="top" secondItem="zcC-t9-LOT" secondAttribute="bottom" constant="20" id="RUH-Q2-V33"/>
+                            <constraint firstItem="UYU-kT-WFC" firstAttribute="top" secondItem="oWT-xp-qop" secondAttribute="bottom" constant="200" id="SNw-1G-x3r"/>
+                            <constraint firstItem="UYU-kT-WFC" firstAttribute="centerX" secondItem="oK7-Pl-WhV" secondAttribute="centerX" id="SuS-FB-3tv"/>
+                            <constraint firstItem="zcC-t9-LOT" firstAttribute="centerX" secondItem="oK7-Pl-WhV" secondAttribute="centerX" id="TPn-WR-fV3"/>
+                            <constraint firstItem="9JD-9I-99P" firstAttribute="top" secondItem="UYU-kT-WFC" secondAttribute="bottom" constant="20" id="Wbc-2R-9Uu"/>
+                            <constraint firstItem="oWT-xp-qop" firstAttribute="centerX" secondItem="oK7-Pl-WhV" secondAttribute="centerX" id="ZDJ-7Z-nJU"/>
+                            <constraint firstItem="HRf-Mp-Zl2" firstAttribute="centerX" secondItem="oK7-Pl-WhV" secondAttribute="centerX" id="Zi3-Eg-Miu"/>
+                            <constraint firstItem="9JD-9I-99P" firstAttribute="leading" secondItem="Jyo-3i-5M1" secondAttribute="leading" constant="20" id="sQy-CD-lpV"/>
+                            <constraint firstItem="oWT-xp-qop" firstAttribute="top" secondItem="jjF-Pf-pVx" secondAttribute="bottom" constant="20" id="u4f-CX-z0m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jyo-3i-5M1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="E0o-Ze-Tqf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJ6-Ax-686" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1557.9710144927537" y="-338.16964285714283"/>
+        </scene>
         <!--Emojigram Guesser View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -43,37 +124,49 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nRT-q3-0cj">
-                                <rect key="frame" x="20" y="333.5" width="320" height="30"/>
+                                <rect key="frame" x="20" y="333.5" width="305" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2i-0Z-iLG">
-                                <rect key="frame" x="348" y="333.5" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="C8i-a5-1uW"/>
-                                </constraints>
-                                <state key="normal" title="Got it?"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2i-0Z-iLG">
+                                <rect key="frame" x="333" y="330.5" width="61" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Got it?">
+                                    <color key="titleColor" red="0.21965261580000001" green="0.14177467060000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="pressedGuessButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gqA-eC-wd9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0V-oF-eOx">
-                                <rect key="frame" x="166.5" y="413.5" width="81" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Need a hint?"/>
+                                <rect key="frame" x="149.5" y="413.5" width="115" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Need a hint?">
+                                    <color key="titleColor" red="0.21965261580000001" green="0.14177467060000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
-                                    <action selector="tappedHintButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hn5-oY-mrB"/>
+                                    <action selector="pressedHintButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tii-DJ-odq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeN-SB-8yY">
-                                <rect key="frame" x="20" y="462.5" width="374" height="0.0"/>
+                                <rect key="frame" x="20" y="469.5" width="374" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pp-JT-v0s">
+                                <rect key="frame" x="167" y="489.5" width="80" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Give up?">
+                                    <color key="titleColor" red="0.21965261580000001" green="0.14177467060000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedGiveUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BDS-iC-HIT"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.98912495374679565" green="1" blue="0.37628674507141113" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="hBY-gw-jRx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2Rh-bC-oi2"/>
                             <constraint firstItem="q0V-oF-eOx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Am-gw-4lf"/>
@@ -89,7 +182,9 @@
                             <constraint firstItem="Scn-Nc-XgL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="O3T-Rk-k2I"/>
                             <constraint firstItem="eeN-SB-8yY" firstAttribute="top" secondItem="q0V-oF-eOx" secondAttribute="bottom" constant="20" id="Q6L-gd-IHP"/>
                             <constraint firstItem="hBY-gw-jRx" firstAttribute="top" secondItem="Scn-Nc-XgL" secondAttribute="bottom" constant="40" id="R3e-up-fvd"/>
+                            <constraint firstItem="5Pp-JT-v0s" firstAttribute="top" secondItem="eeN-SB-8yY" secondAttribute="bottom" constant="20" id="aaD-Uh-JMh"/>
                             <constraint firstItem="ueL-w9-wjB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="deD-bx-zph"/>
+                            <constraint firstItem="5Pp-JT-v0s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eMe-Zu-0Zj"/>
                             <constraint firstItem="rq8-4t-mnH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gSD-6j-Vb2"/>
                             <constraint firstItem="u2i-0Z-iLG" firstAttribute="leading" secondItem="nRT-q3-0cj" secondAttribute="trailing" constant="8" id="jjg-UU-t0B"/>
                             <constraint firstItem="rq8-4t-mnH" firstAttribute="top" secondItem="ueL-w9-wjB" secondAttribute="bottom" constant="20" id="k1l-xi-CqZ"/>
@@ -108,6 +203,7 @@
                         <outlet property="categoryHeaderLabel" destination="rq8-4t-mnH" id="5Va-8R-bTF"/>
                         <outlet property="categoryLabel" destination="Scn-Nc-XgL" id="s3s-LG-fSt"/>
                         <outlet property="emojigramLabel" destination="hBY-gw-jRx" id="C69-eI-0Es"/>
+                        <outlet property="giveUpButton" destination="5Pp-JT-v0s" id="urk-9R-dAy"/>
                         <outlet property="guessButton" destination="u2i-0Z-iLG" id="qAY-rU-vhm"/>
                         <outlet property="guessTextField" destination="nRT-q3-0cj" id="Wfo-B9-lYW"/>
                         <outlet property="hintButton" destination="q0V-oF-eOx" id="ncM-tS-Ufa"/>
@@ -117,25 +213,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065.217391304348" y="20.758928571428569"/>
+            <point key="canvasLocation" x="2649" y="-338"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="nRo-cI-eVN">
+        <scene sceneID="wdu-7z-NdQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YZY-SY-5z6" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1PY-dR-sQW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BmB-6L-qU1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HNr-Xm-KFs">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="v8T-jm-qRH"/>
+                        <segue destination="Bo4-8v-6r9" kind="relationship" relationship="rootViewController" id="UKv-bf-ESM"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Igw-js-Uzn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZ9-Kw-lft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="155.07246376811597" y="20.758928571428569"/>
+            <point key="canvasLocation" x="647.82608695652175" y="-338.16964285714283"/>
         </scene>
     </scenes>
 </document>

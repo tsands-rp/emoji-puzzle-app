@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C301913422B3E89F0064C173 /* EmojigramTitleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C301913322B3E89F0064C173 /* EmojigramTitleScreenViewController.swift */; };
+		C301913822B7D2E80064C173 /* EmojigramGuessProgramaticLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C301913722B7D2E80064C173 /* EmojigramGuessProgramaticLayoutViewController.swift */; };
+		C301917422B9239A0064C173 /* EmojigramGuesserBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C301917322B9239A0064C173 /* EmojigramGuesserBaseViewController.swift */; };
+		C301918122BA9BAE0064C173 /* BuildYourOwnEmojigramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C301918022BA9BAE0064C173 /* BuildYourOwnEmojigramViewController.swift */; };
 		C3447F4B22B18FC9009F4819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3447F4A22B18FC9009F4819 /* AppDelegate.swift */; };
 		C3447F4D22B18FC9009F4819 /* EmojigramGuesserViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3447F4C22B18FC9009F4819 /* EmojigramGuesserViewControllerViewController.swift */; };
 		C3447F5022B18FC9009F4819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3447F4E22B18FC9009F4819 /* Main.storyboard */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C301913322B3E89F0064C173 /* EmojigramTitleScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojigramTitleScreenViewController.swift; sourceTree = "<group>"; };
+		C301913722B7D2E80064C173 /* EmojigramGuessProgramaticLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmojigramGuessProgramaticLayoutViewController.swift; path = "/Users/tsands/dev/ios/emoji-puzzle-app/Emojigrams/Emojigrams/EmojigramGuessProgramaticLayoutViewController.swift"; sourceTree = "<absolute>"; };
+		C301917322B9239A0064C173 /* EmojigramGuesserBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojigramGuesserBaseViewController.swift; sourceTree = "<group>"; };
+		C301918022BA9BAE0064C173 /* BuildYourOwnEmojigramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildYourOwnEmojigramViewController.swift; sourceTree = "<group>"; };
 		C3447F4722B18FC9009F4819 /* Emojigrams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emojigrams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3447F4A22B18FC9009F4819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3447F4C22B18FC9009F4819 /* EmojigramGuesserViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojigramGuesserViewControllerViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				C3447F4A22B18FC9009F4819 /* AppDelegate.swift */,
+				C301918022BA9BAE0064C173 /* BuildYourOwnEmojigramViewController.swift */,
+				C301913722B7D2E80064C173 /* EmojigramGuessProgramaticLayoutViewController.swift */,
 				C3447F4C22B18FC9009F4819 /* EmojigramGuesserViewControllerViewController.swift */,
+				C301917322B9239A0064C173 /* EmojigramGuesserBaseViewController.swift */,
+				C301913322B3E89F0064C173 /* EmojigramTitleScreenViewController.swift */,
 				C3447F7822B1A1CC009F4819 /* Emojigram.swift */,
 				C3447F7A22B29A00009F4819 /* EmojigramStore.swift */,
 				C3447F4E22B18FC9009F4819 /* Main.storyboard */,
@@ -263,9 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3447F4D22B18FC9009F4819 /* EmojigramGuesserViewControllerViewController.swift in Sources */,
+				C301918122BA9BAE0064C173 /* BuildYourOwnEmojigramViewController.swift in Sources */,
 				C3447F7B22B29A00009F4819 /* EmojigramStore.swift in Sources */,
+				C301913822B7D2E80064C173 /* EmojigramGuessProgramaticLayoutViewController.swift in Sources */,
 				C3447F7922B1A1CC009F4819 /* Emojigram.swift in Sources */,
+				C301913422B3E89F0064C173 /* EmojigramTitleScreenViewController.swift in Sources */,
 				C3447F4B22B18FC9009F4819 /* AppDelegate.swift in Sources */,
+				C301917422B9239A0064C173 /* EmojigramGuesserBaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
