@@ -11,8 +11,9 @@ import UIKit
 class EmojigramTitleScreenViewController: UIViewController {
     let emojigramStore = EmojigramStore()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        guard let _ = self.navigationController else { return }
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func tappedProgrammaticViewButton(_ sender: Any) {

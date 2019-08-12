@@ -9,6 +9,13 @@
 import UIKit
 
 class EmojigramGuesserBaseViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let naviController = self.navigationController {
+            naviController.navigationBar.isHidden = false
+        }
+    }
     // MARK: Navigation Methods
     
     func quit() {
@@ -70,5 +77,11 @@ class EmojigramGuesserBaseViewController: UIViewController {
         alertC.addAction(okAction)
         self.present(alertC, animated: true, completion: nil)
     }
+}
 
+extension EmojigramGuesserBaseViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
