@@ -26,6 +26,7 @@ class EmojigramGuesserViewController: EmojigramGuesserBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updatePage()
+        self.configurePage()
     }
     
     // MARK: View Updates
@@ -36,6 +37,13 @@ class EmojigramGuesserViewController: EmojigramGuesserBaseViewController {
             return
         }
         self.updatePage(with: emojigram)
+    }
+    
+    func configurePage() {
+        repeat {
+            self.guessTextField.autocorrectionType = .no
+            self.guessTextField.delegate = self
+        } while (false)
     }
     
     func updatePageWithoutEmojigram() {
@@ -105,4 +113,3 @@ class EmojigramGuesserViewController: EmojigramGuesserBaseViewController {
         self.giveUpButton.isHidden = false
     }
 }
-

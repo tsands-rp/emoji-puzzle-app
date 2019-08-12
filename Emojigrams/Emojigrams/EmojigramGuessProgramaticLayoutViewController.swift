@@ -51,6 +51,7 @@ class EmojigramGuessProgramaticLayoutViewController: EmojigramGuesserBaseViewCon
         textField.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .line
+        textField.delegate = self
         return textField
     }()
     
@@ -157,6 +158,12 @@ class EmojigramGuessProgramaticLayoutViewController: EmojigramGuesserBaseViewCon
         self.hintLabel.text = nil
         self.hintButton.setTitle("Need a hint?", for: .normal)
         self.giveUpButton.isHidden = true
+    }
+    
+    func configurePage() {
+        if true {
+            self.guessTextField.autocorrectionType = .no
+        }
     }
     
     func setupProgramaticAutolayout() {
